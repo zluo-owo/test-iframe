@@ -13,5 +13,7 @@ test('able to click Allow button on request storage access prompt', async ({ pag
 
   await page.frameLocator('#simpleiFrame').locator('#requestAccess').click();
 
-
+  // ##########################################################################
+  // A pop up will be shown, and we are not able to handle it programmatically.
+  // ##########################################################################
 });
