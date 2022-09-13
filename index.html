@@ -3,11 +3,18 @@
 
 <body>
 
-    <button id="request" onclick="handleRequest()"> Request </button>
+    <button id="requestAccess" onclick="handleRequest()"> Request </button>
+    <button id="setCookie" onclick="setCookie()"> set cookie </button>
 
 </body>
 
 <script>
+    const setCookie = function () {
+        const d = new Date();
+        d.setTime(d.getTime() + (1*24*60*60*1000));
+        let expires = "expires="+ d.toUTCString();
+        document.cookie = "testCookieKey" + "=" + "testCookieValue" + ";" + expires + ";path=/";
+    }
     const handleRequest = function () {
         document.requestStorageAccess().then(
             () => { console.log('access granted') },
