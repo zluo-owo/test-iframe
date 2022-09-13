@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <button id="requestButton"> Load </button>
+
+</body>
+
+<script>
+    const handleRequest = function () {
+        document.requestStorageAccess().then(
+            () => { console.log('access granted') },
+            () => { console.log('access denied') }
+        );
+    }
+    document.getElementById("requestButton").addEventListener('click', handleRequest);
+</script>
+
+</html>
